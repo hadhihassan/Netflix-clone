@@ -39,6 +39,9 @@ const RowPost = (props) => {
             console.error('Error fetching movie videos:', error);
           });
       };
+      const handleClickClose = () => {
+        setUrlId("")
+      }
       
     return (
 
@@ -47,11 +50,13 @@ const RowPost = (props) => {
             <div className='posters'>
                 {
                     movies.map((obj) => {
-                        return <img onClick={() => handleMovieVideo(obj.id)} alt="poster" className={props.isSmall ? 'small_poster' : 'poster'} src={`${imageUrl + obj.backdrop_path}`} />
+                        return <> <img onClick={() => handleMovieVideo(obj.id)} alt="poster" className={props.isSmall ? 'small_poster' : 'poster'} src={`${imageUrl + obj.backdrop_path}`} />         
+                    </>
                     })
                 }
             </div>
-           { url && <Youtube opts={opts} videoId={url.key}/>}
+            { url && <button className='close_btn' onClick={()=>handleClickClose()}> X</button>}
+           { url &&  <Youtube  opts={opts} videoId={url.key}/>}
         </div>
     )
 }

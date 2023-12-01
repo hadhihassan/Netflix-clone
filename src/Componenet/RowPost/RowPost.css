@@ -2,36 +2,43 @@
     margin-left: 20px;
     color: #fff;
 }
-
 .posters{
     display: flex;
     padding: 20px;
     overflow-x: scroll;
     overflow-y:hidden ;
 }
-
 .posters::-webkit-scrollbar{
     display: none;
 }
-
-
 .poster{
     max-height: 210px;
     margin-right: 10px;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
-
 }
 .small_poster{
     cursor: pointer;
     max-height: 150px;
     margin-right: 10px;
     transition: transform 0.3s ease-in-out;
-
 }
 .poster:hover{
     transform: scale(1.1);
 }
 .small_poster:hover{
     transform: scale(1.1);
+}
+.close_btn{
+    color: white;
+    outline: invert;
+    border: none;
+    font-weight: 700;
+    border-radius: 5px;
+    background-color: rgba(51, 51, 51, .5);
+    cursor: pointer;
+}
+.close_btn:hover{
+    color: black;
+    background-color: #e6e6e6;
 }
